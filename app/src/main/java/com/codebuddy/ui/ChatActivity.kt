@@ -10,6 +10,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
 import java.io.IOException
+import java.util.concurrent.TimeUnit
 
 class ChatActivity : AppCompatActivity() {
 
@@ -29,7 +30,7 @@ class ChatActivity : AppCompatActivity() {
         sendBtn = findViewById(R.id.sendButton)
 
         val username = intent.getStringExtra("username") ?: "User"
-        backendUrl = intent.getStringExtra("backendUrl") ?: "http://localhost:8000"
+        backendUrl = intent.getStringExtra("backendUrl") ?: "https://6cde3eb9d002.ngrok-free.app/"
 
         appendChat("Welcome $username 👋\n")
 
@@ -56,12 +57,18 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun sendToBackend(message: String) {
-        val client = OkHttpClient()
-        val json = JSONObject().put("message", message)
+        // 🔧 Custom OkHttp client with timeout settings
+        val client = OkHttpClient.Builder()
+            .connectTimeout(300, TimeUnit.SECONDS)
+            .readTimeout(300, TimeUnit.SECONDS)
+            .build()
+
+
+        val json = JSONObject().put("prompt", message)  // ✅ 'prompt' key is expected by FastAPI
         val body = json.toString().toRequestBody("application/json".toMediaType())
 
         val request = Request.Builder()
-            .url("$backendUrl/chat")
+            .url("$backendUrl/generate/")  // ✅ Fix endpoint path
             .post(body)
             .build()
 
@@ -73,7 +80,7 @@ class ChatActivity : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 if (response.isSuccessful) {
                     val resBody = response.body?.string()
-                    val jsonRes = JSONObject(resBody)
+                    val jsonRes = JSONObject(resBody!!)
                     val reply = jsonRes.optString("response", "🤖 (No reply)")
                     cacheManager.saveReply(message, reply)
                     appendChat("🤖 $reply\n")
@@ -83,4 +90,7 @@ class ChatActivity : AppCompatActivity() {
             }
         })
     }
+
+
+
 }
