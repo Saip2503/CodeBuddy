@@ -1,0 +1,5 @@
+What is a variable in Python?	In Python, a variable is a symbolic name that is a reference or pointer to an object.
+What is a function in Python?	A function in Python is a block of code which only runs when it is called, and can return data as a result.
+Explain what a loop is.	A loop in Python is used to iterate over a sequence like a list, tuple, or string.
+How to define a list in Python?=You can define a list using square brackets: my_list = [1, 2, 3]
+What is the difference between list and tuple?=Lists are mutable and defined with [], while tuples are immutable and defined with ().
