@@ -1,0 +1,6 @@
+com.codebuddy.test.app-annotation-experimental-1.4.0-0 /home/user/.gradle/caches/transforms-4/7e7a4a42b11e6f9e39880c188d56f7fc/transformed/annotation-experimental-1.4.0/res
+com.codebuddy.test.app-core-1.5.0-1 /home/user/.gradle/caches/transforms-4/f30196d7ef1d656c8de10ac0ae750ea4/transformed/core-1.5.0/res
+com.codebuddy.test.app-androidTest-2 /home/user/AndroidStudioProjects/CodeBuddy/app/build/generated/res/resValues/androidTest/debug
+com.codebuddy.test.app-mergeDebugAndroidTestResources-3 /home/user/AndroidStudioProjects/CodeBuddy/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.codebuddy.test.app-mergeDebugAndroidTestResources-4 /home/user/AndroidStudioProjects/CodeBuddy/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.codebuddy.test.app-debugAndroidTest-5 /home/user/AndroidStudioProjects/CodeBuddy/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

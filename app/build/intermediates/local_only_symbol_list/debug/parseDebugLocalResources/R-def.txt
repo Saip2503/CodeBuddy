@@ -1,0 +1,29 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id backendUrlInput
+id chatBox
+id chatLayout
+id chatScroll
+id inputLayout
+id loginButton
+id loginLayout
+id sendButton
+id userInput
+id usernameInput
+layout activity_chat
+layout activity_login
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.CodeBuddy
+xml backup_rules
+xml data_extraction_rules
